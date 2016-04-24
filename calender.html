@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--设置屏幕按1：1的尺寸显示，在 iPhone 和其他智能手机的浏览器提供网站全视图浏览，并禁止用户缩放页面-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <!--允许全屏模式浏览,指定的iPhone中safari顶端的状态条的样式,不识别邮件和不把数字识别为电话号码-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no; email=no" />
+    <meta charset="UTF-8">
+    <meta name="description" content="万年历">
+    <meta name="Keywords" content="万年历,万年历查询,农历,农历查询,日历,阳历,阴历" />
+    <title>calender</title>
+    <!--用@import引用CSS*/-->
+    <style type="text/css">
+        @import url(calender.css);
+    </style>
+</head>
+<body>
+<!--创建表单-->
+<form name="CALENDER" class="content">
+    <!--定义表格布局-->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="calender">
+        <thead>
+        <tr>
+            <td colspan="7">
+                <span>Gregorian calendar </span>
+                <select name="SYear" onchange="changeCalender();" style="font-size: 10pt">
+                    <script>
+                        for (i = 1900; i < 2050; i++) document.write('<option>' + i);
+                    </script>
+                </select>
+                <span>Year</span>
+                <select name="SMonth" onchange="changeCalender();" style="font-size: 10pt">
+                    <script>
+                        for (i = 1; i < 13; i++) document.write('<option>' + i);
+                    </script>
+                </select><span>Month</span> </font>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="background: #eee;">
+            <td width="50">
+                日
+            </td>
+            <td width="50">
+                一
+            </td>
+            <td width="50">
+                二
+            </td>
+            <td width="50">
+                三
+            </td>
+            <td width="50">
+                四
+            </td>
+            <td width="50">
+                五
+            </td>
+            <td width="50">
+                六
+            </td>
+        </tr>
+        <!--尽可能避免在head中加载脚本-->
+        <script>
+            var gNum;
+            for (i = 0; i < 6; i++) {
+                document.write('<tr align="center">');
+                for (j = 0; j < 7; j++) {
+                    gNum = i * 7 + j;
+                    document.write('<td id="GD' + gNum + '"><font id="SD' + gNum + '" size=2 face="Arial Black"');
+                    if (j == 0) document.write('color="MidnightBlue"');
+                    if (j == 6) document.write('color="CornflowerBlue"');
+                    document.write('></font><br/><font id="LD' + gNum + '" size=2 style="font-size:9pt"></font></td>');
+                }
+                document.write('</tr>');
+            }
+        </script>
+        <script src="calender.js"></script>
+        <!--日历中，不同日期颜色以及字体的区分-->
+        </tbody>
+    </table>
+</form>
+</body>
+</html>
