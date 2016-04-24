@@ -1,0 +1,50 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+body
+{
+    background: AliceBlue;
+    word-wrap:break-word;
+}
+.content
+{
+    border: 3px solid #ddd;
+    width: 80%;
+    margin: 100px auto;
+}
+.calender
+{
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    background: #fff;
+}
+.calender td
+{
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: center;
+}
+.calender thead
+{
+    background: darkcyan;
+}
+.calender thead td
+{
+    padding: 10px 5px;
+    font: normal 12px/normal 'microsoft yahei';
+    color: #fff;
+    text-align: center;
+}
+.calender thead td span
+{
+    padding: 0 5px;
+}
+.calender tbody td
+{
+    padding: 5px 3px;
+    font-size: 12px;
+}
